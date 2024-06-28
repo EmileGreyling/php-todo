@@ -1,5 +1,8 @@
 <?php
 require "config/database.php";
+require_once "includes/auth.php";
+
+$user_id = $_SESSION['user_id'];
 
 if (isset($_POST["add"])) {
     if ($_POST["task"] != "") {
@@ -7,7 +10,7 @@ if (isset($_POST["add"])) {
 
         $addtasks = mysqli_query(
             $db,
-            "INSERT INTO task (task, status) VALUES('$task', 'Pending')"
+            "INSERT INTO task (user_id, task, status) VALUES($user_id, '$task', 'Pending')"
         )
             or
             die(mysqli_error($db));
