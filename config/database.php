@@ -1,5 +1,13 @@
 <?php
-    $db = mysqli_connect("localhost", "root", "", "todo")
-        or 
-        die("Connection failed: " .  mysqli_connect_error());
-?>
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "todo";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
