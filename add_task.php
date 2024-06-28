@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "config/database.php";
 
 if (isset($_POST["add"])) {
     if ($_POST["task"] != "") {

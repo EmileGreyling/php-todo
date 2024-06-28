@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "config/database.php";
 
 if ($_GET['task_id']) {
     $task_id = $_GET['task_id'];
